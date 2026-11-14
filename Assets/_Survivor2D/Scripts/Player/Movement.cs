@@ -1,17 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Movement : MonoBehaviour
+public class Movement : MonoBehaviour, IMoveInput
 {
-
-    [SerializeField] float _Speed = 2f;
+    [SerializeField] CharactersSO _CharactersSO;
     InputAction _MoveAction;
-
-    Vector2 _Pos;
+    public Vector2 _Pos {get; private set;}
+    float _Speed;
     float _xPos, _yPos;
 
     void Start()
     {
+        _Speed = _CharactersSO._Speed;
         _MoveAction = InputSystem.actions.FindAction("Move");
     }
 
