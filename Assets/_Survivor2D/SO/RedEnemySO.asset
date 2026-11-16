@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a951b00deebc94d4c9c115f4d34569f5, type: 3}
-  m_Name: Enemy
-  m_EditorClassIdentifier: Assembly-CSharp::CharactersSO
-  _HEALTH: 20
-  _SPEED: 1
+  m_Script: {fileID: 11500000, guid: e8c0aafe2db2d424d89be73d1739ba83, type: 3}
+  m_Name: RedEnemySO
+  m_EditorClassIdentifier: Assembly-CSharp::EnemiesSO
+  _HEALTH: 10
+  _SPEED: 2
+  _DAMAGE_AMOUNT: 0
