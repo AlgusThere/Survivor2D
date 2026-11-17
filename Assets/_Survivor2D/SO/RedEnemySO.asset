@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesSO
   _HEALTH: 10
   _SPEED: 2
-  _DAMAGE_AMOUNT: 0
+  _DAMAGE_AMOUNT: 7
