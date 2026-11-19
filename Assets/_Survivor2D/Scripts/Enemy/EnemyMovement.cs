@@ -14,18 +14,26 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if(_PlayerPos == null) return;
-        //    _Target = _PlayerPos.position - transform.position;
+        Movement();
+        DeactiveEnemy();
+    }
+
+    void Movement()
+    {
+        if (_PlayerPos == null) return;
+        //  _Target = _PlayerPos.position - transform.position;
         transform.position = Vector2.MoveTowards(transform.position, _PlayerPos.position, _EnemiesSO._Speed * Time.deltaTime);
-
-        if(Vector2.Distance(_PlayerPos.position, transform.position) < 0.01f)
-        {
-            gameObject.SetActive(false);
-        }
-
-        // ALTERNATİFLER 
+        //  ALTERNATİFLER 
         //  transform.Translate(_Target * _CharactersSO._Speed * Time.deltaTime);
         //  transform.position += _Target * _CharactersSO._Speed * Time.deltaTime;
-
     }
+    private void DeactiveEnemy()
+    {
+        if (Vector2.Distance(_PlayerPos.position, transform.position) < 0.01f)
+        {
+            gameObject.SetActive(false);
+            PlayerHealthEvent.OnDamaged((int)_EnemiesSO._DamageAmount);
+        }
+    }
+
 }
