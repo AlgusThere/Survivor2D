@@ -101,6 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293877462396234957}
+  - component: {fileID: -1145090322466113772}
   - component: {fileID: 301597881570578184}
   - component: {fileID: 6048550270477155931}
   m_Layer: 7
@@ -126,6 +127,19 @@ Transform:
   - {fileID: 6481217853223929039}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1145090322466113772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088935283916487498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcddcd7c8d8b294a8c766b42a231b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  _Loot: {fileID: 6804858457311301319, guid: 28b79986edc88d144972b71a41b45fb7, type: 3}
 --- !u!114 &301597881570578184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b0a6ebfb240964784e00a529bb288e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  _PlayerPos: {fileID: 0}
   _EnemiesSO: {fileID: 11400000, guid: 40d446fe30f705e47940a2956ccf5b56, type: 2}
+  _Enemy: {fileID: -1145090322466113772}
 --- !u!61 &6048550270477155931
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] EnemiesSO _EnemiesSO;
+    [SerializeField] Enemy _Enemy;
 
     Transform _PlayerPos;
     // Vector3 _Target;
@@ -29,9 +30,10 @@ public class EnemyMovement : MonoBehaviour
     }
     private void DeactiveEnemy()
     {
-        if (Vector2.Distance(_PlayerPos.position, transform.position) < 0.01f)
+        if (Vector2.Distance(_PlayerPos.position, transform.position) < 0.5f)
         {
             gameObject.SetActive(false);
+            _Enemy.SpawnLoot();
             PlayerHealthEvent.OnDamaged((int)_EnemiesSO._DamageAmount);
         }
     }
