@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2481787578236978898}
   - component: {fileID: 6458681389167226437}
   - component: {fileID: 7218896304853855887}
+  - component: {fileID: 3972140720645935537}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -98,6 +99,22 @@ MonoBehaviour:
   _Radius: 4
   _Weapon: {fileID: 7857576127627093290}
   _WeaponDistance: 1.5
+--- !u!114 &3972140720645935537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742545950708222729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0beff7c1d72d63244858a05ee6e4e9d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TakeLoots
+  _LootDistance: 1
+  _LootLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1942568526218226654
 GameObject:
   m_ObjectHideFlags: 0

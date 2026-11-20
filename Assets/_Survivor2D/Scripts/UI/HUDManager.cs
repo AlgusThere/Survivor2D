@@ -11,12 +11,12 @@ public class HUDManager : MonoBehaviour
     void OnEnable()
     {
         PlayerHealthEvent.OnHealthUIChangedAction += DecreaseHealthText;
-        UpdateScoreEvent._UpdateScoreAction += UpdateScoreText;
+        UpdateScoreEvent._UpdateScoreTextAction += UpdateScoreTextMetod;
     }
     void OnDisable()
     {
         PlayerHealthEvent.OnHealthUIChangedAction -= DecreaseHealthText;
-        UpdateScoreEvent._UpdateScoreAction -= UpdateScoreText;
+        UpdateScoreEvent._UpdateScoreTextAction -= UpdateScoreTextMetod;
     }
 
     void DecreaseHealthText(int amount)
@@ -24,7 +24,7 @@ public class HUDManager : MonoBehaviour
         _HealthSlider.value = amount;
     }
 
-    void UpdateScoreText(float amount)
+    void UpdateScoreTextMetod(float amount)
     {
         _ScoreText.text = amount.ToString();
     }
