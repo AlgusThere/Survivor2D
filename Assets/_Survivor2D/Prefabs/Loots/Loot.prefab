@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3235083f4fd4b054cb9aa804f29bd240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstLoot
+  _LootsSO: {fileID: 11400000, guid: 24e21d139b55a8b479a115ec69ab2bc2, type: 2}

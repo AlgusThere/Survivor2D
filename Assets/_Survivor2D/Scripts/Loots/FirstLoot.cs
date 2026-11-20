@@ -1,13 +1,9 @@
 using UnityEngine;
 
-public class FirstLoot : MonoBehaviour, ILootable
+public class FirstLoot : MonoBehaviour
 {
+    [SerializeField] LootsSO _LootsSO;
     SpriteRenderer _SpriteRenderer;
-
-    public void LootAble(int amount)
-    {
-        
-    }
 
     void Start()
     {
@@ -16,6 +12,11 @@ public class FirstLoot : MonoBehaviour, ILootable
     void Update()
     {
         _SpriteRenderer.color = Color.Lerp(Color.blueViolet, Color.blue, Mathf.PingPong(Time.time, 1f));
+    }
+
+    void OnDisable()
+    {
+        UpdateScoreEvent.UpateScore(_LootsSO._LootValue);
     }
 
 
