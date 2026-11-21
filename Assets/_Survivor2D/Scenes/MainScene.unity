@@ -5594,7 +5594,7 @@ GameObject:
   - component: {fileID: 1351138617}
   - component: {fileID: 1351138616}
   m_Layer: 0
-  m_Name: SCORE MANAGER
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6108,10 +6108,6 @@ PrefabInstance:
     - target: {fileID: 3887228899986177719, guid: d6635bac023377348ade8b8afb02c841, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3972140720645935537, guid: d6635bac023377348ade8b8afb02c841, type: 3}
-      propertyPath: _PullStrength
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8762558464243533753, guid: d6635bac023377348ade8b8afb02c841, type: 3}
       propertyPath: m_AnchorMax.x
