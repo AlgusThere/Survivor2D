@@ -22,11 +22,6 @@ public class EnemySpawnPool : MonoBehaviour
         StartCoroutine(SpawnerCoroutine());
     }
 
-    void Update()
-    {
-
-    }
-
     void CreatePool()
     {
         _Bounds = _TileMapCollider.bounds;

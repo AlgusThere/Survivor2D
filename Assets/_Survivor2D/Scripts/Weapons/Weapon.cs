@@ -2,34 +2,48 @@ using UnityEngine;
 
 public abstract class Weapon : IWeapon
 {
-    protected float _Damage;
-    protected float _fireDuration;
-    private float _LastFireTime;
+    protected readonly WeaponsSO _WeaponData;
+    protected readonly IBulletSource _Bullets;
+    private float _LastFireTime = float.NegativeInfinity;
 
-    protected Weapon(float _damageAmount , float _durationAmount)
+    protected Weapon(WeaponsSO data, IBulletSource bullets)
     {
-        _Damage = _damageAmount;
-        _fireDuration = _durationAmount;
+        _WeaponData = data;
+        _Bullets = bullets;
     }
 
-    public void Fire(float _currentTime)
+    public void TryFire(float _currentTime, Vector2 origin, Vector2 direction)
     {
-        if(_currentTime - _LastFireTime < _fireDuration) return;
+        if (_currentTime - _LastFireTime < _WeaponData.FireRate) return;
 
         _LastFireTime = _currentTime;
-        Shoot();
+        Shoot(origin, direction);
     }
-
-    protected abstract void Shoot();
-    public float _DamageAmount => throw new System.NotImplementedException();
-    public float _FireDuration => throw new System.NotImplementedException();
+    protected abstract void Shoot(Vector2 origin, Vector2 direction);
 }
 
 public class Pistol : Weapon
 {
-    public Pistol() : base(_damageAmount: 10, _durationAmount: 2f) {}
-    protected override void Shoot()
+    public Pistol(WeaponsSO data, IBulletSource bullets) : base(data, bullets) { }
+    protected override void Shoot(Vector2 origin, Vector2 direction)
     {
-        Debug.Log($"Tek mermi: {_DamageAmount} hasar");
+        _Bullets.Get().Launch(origin, direction, _WeaponData.DamageAmount, _WeaponData.BulletSpeed, _WeaponData.BulletLifeTime);
     }
 }
+// public class Shotgun : Weapon
+// {
+//     const int Pellets = 5;
+//     const float Spread = 30f;
+
+//     public Shotgun(WeaponsSO data, IBulletSource bullets) : base(data, bullets) { }
+
+//     protected override void Shoot(Vector2 origin, Vector2 direction)
+//     {
+//         for (int i = 0; i < Pellets; i++)
+//         {
+//             float offset = Mathf.Lerp(-Spread / 2f, Spread / 2f, i / (float)(Pellets - 1));
+//             Vector2 dir = Quaternion.Euler(0, 0, offset) * direction;
+//             _Bullets.Get().Launch(origin, dir, _WeaponData.DamageAmount, _WeaponData.BulletSpeed, _WeaponData.BulletLifeTime);
+//         }
+//     }
+// }

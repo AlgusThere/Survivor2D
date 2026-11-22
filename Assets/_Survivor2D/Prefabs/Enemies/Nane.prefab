@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 8542417276254494130}
   - component: {fileID: -7585924518446349160}
   - component: {fileID: 7209676880563726393}
+  - component: {fileID: 264584258914274478}
   - component: {fileID: 3737611455907664021}
   m_Layer: 7
   m_Name: Nane
@@ -154,6 +155,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   _EnemiesSO: {fileID: 11400000, guid: 140ae6941be39a84997543c3b6fe9fac, type: 2}
   _Enemy: {fileID: -7585924518446349160}
+--- !u!114 &264584258914274478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5457423857272282312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014124a304405a043bdecb6084fa5ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  _EnemiesSO: {fileID: 11400000, guid: 140ae6941be39a84997543c3b6fe9fac, type: 2}
 --- !u!61 &3737611455907664021
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EnemyCheck : MonoBehaviour
+public class EnemyCheck : MonoBehaviour, ITargetProvider
 {
     [Header("Target Settings")]
     [SerializeField] LayerMask _LayerMask;
@@ -11,7 +11,7 @@ public class EnemyCheck : MonoBehaviour
     [SerializeField] float _WeaponDistance = 1.5f;
 
     Collider2D[] _EnemyCollider;
-    public Transform _CurrentTarget {get; private set;}
+    public Transform CurrentTarget {get; private set;}
 
     void Update()
     {
@@ -25,7 +25,7 @@ public class EnemyCheck : MonoBehaviour
 
         if (_EnemyCollider == null) return;
 
-        _CurrentTarget = null;
+        CurrentTarget = null;
 
         float _ClosestEnemy = Mathf.Infinity;
 
@@ -35,7 +35,7 @@ public class EnemyCheck : MonoBehaviour
             if (_Distance < _ClosestEnemy)
             {
                 _ClosestEnemy = _Distance;
-                _CurrentTarget = _Enemy.transform;
+                CurrentTarget = _Enemy.transform;
             }
         }
         /* for (int i = 0; i < _EnemyCollider.Length; i++)
@@ -45,9 +45,9 @@ public class EnemyCheck : MonoBehaviour
     }
     private void PositionWeapon()
     {
-        if(_CurrentTarget == null) {return;}
+        if(CurrentTarget == null) {return;}
 
-        Vector2 _Direction = _CurrentTarget.position - transform.position;
+        Vector2 _Direction = CurrentTarget.position - transform.position;
 
         _Direction.Normalize();
 

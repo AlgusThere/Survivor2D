@@ -389,7 +389,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7857576127627093290}
-  - component: {fileID: 2619811213643816963}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -414,18 +413,6 @@ Transform:
   - {fileID: 1580411917874969026}
   m_Father: {fileID: 3887228899986177719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2619811213643816963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4935385631182651622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9134c815ac1c264489fca6de09c26404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gun
 --- !u!1 &6840608699188724333
 GameObject:
   m_ObjectHideFlags: 0
