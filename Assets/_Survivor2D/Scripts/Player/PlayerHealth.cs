@@ -14,14 +14,19 @@ public class PlayerHealth : MonoBehaviour
         _CurrentHealth = _MaxHealth;
     }
 
-    void OnEnable() => PlayerHealthEvent.OnDamagedAction += DecreaseHealth;
-    void OnDisable() => PlayerHealthEvent.OnDamagedAction -= DecreaseHealth;
+    void OnEnable() => PlayerHealthEvent.OnDamageRequestAction += DecreaseHealth;
+    void OnDisable() => PlayerHealthEvent.OnDamageRequestAction -= DecreaseHealth;
 
     public void DecreaseHealth(int decreaseAmount)
     {
-        _CurrentHealth -= decreaseAmount;
-        _CurrentHealth = Mathf.Max(_CurrentHealth, _MinHealth);
-        PlayerHealthEvent.OnHealthUIChanged(_CurrentHealth);
+        if(_CurrentHealth <= 0) return;
+        _CurrentHealth = Mathf.Max(_MinHealth, _CurrentHealth - decreaseAmount);
+        PlayerHealthEvent.OnHealthChanged(_CurrentHealth);
+        PlayerHealthEvent.RaiseOnHealthChangedNoV();
+
+        if(_CurrentHealth == 0)
+            PlayerHealthEvent.OnDied();
+
     }
 
 }

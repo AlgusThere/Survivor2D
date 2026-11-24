@@ -5,6 +5,7 @@ public class CharactersSO : ScriptableObject
 {
     [SerializeField] int _HEALTH;
     [SerializeField] float _SPEED;
+    [field: SerializeField] public AudioClip[] PlayerAudios {get; private set;}
 
     public int _Health => _HEALTH;
     public float _Speed => _SPEED;

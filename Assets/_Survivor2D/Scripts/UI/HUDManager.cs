@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,16 +9,16 @@ public class HUDManager : MonoBehaviour
 
     void OnEnable()
     {
-        PlayerHealthEvent.OnHealthUIChangedAction += DecreaseHealthText;
+        PlayerHealthEvent.OnHealthChangedAction += DecreaseHealthSlider;
         UpdateScoreEvent._UpdateScoreTextAction += UpdateScoreTextMetod;
     }
     void OnDisable()
     {
-        PlayerHealthEvent.OnHealthUIChangedAction -= DecreaseHealthText;
+        PlayerHealthEvent.OnHealthChangedAction -= DecreaseHealthSlider;
         UpdateScoreEvent._UpdateScoreTextAction -= UpdateScoreTextMetod;
     }
 
-    void DecreaseHealthText(int amount)
+    void DecreaseHealthSlider(int amount)
     {
         _HealthSlider.value = amount;
     }

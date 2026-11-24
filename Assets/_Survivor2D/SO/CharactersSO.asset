@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharactersSO
   _HEALTH: 100
   _SPEED: 4
+  <PlayerAudios>k__BackingField:
+  - {fileID: 8300000, guid: b257926e9186ea04ebb021a41d94ef36, type: 3}
+  - {fileID: 8300000, guid: 6754938ceeb80c84a97ca866fc19f34d, type: 3}
+  - {fileID: 8300000, guid: e1b4d99505c8fad4385002004b1fe85e, type: 3}
