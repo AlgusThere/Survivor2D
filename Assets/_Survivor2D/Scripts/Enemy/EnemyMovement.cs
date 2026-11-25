@@ -17,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Movement();
         DeactiveEnemy();
+        FlipToPlayer();
     }
 
     void Movement()
@@ -36,6 +37,14 @@ public class EnemyMovement : MonoBehaviour
             _Enemy.SpawnLoot();
             PlayerHealthEvent.OnDamaged((int)_EnemiesSO._DamageAmount);
         }
+    }
+
+    private void FlipToPlayer()
+    {
+        float direction = _PlayerPos.position.x - transform.position.x;
+        Vector2 scale = transform.localScale;
+        scale.x = direction < 0 ? -1f : 1f;
+        transform.localScale = scale;
     }
 
 }
