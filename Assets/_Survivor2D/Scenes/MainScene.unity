@@ -6824,6 +6824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682903886}
   - component: {fileID: 1682903887}
+  - component: {fileID: 1682903888}
   - component: {fileID: 1682903885}
   m_Layer: 0
   m_Name: SFX MANAGER
@@ -6958,6 +6959,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSFXManager
   _PlayerSFX: {fileID: 1682903885}
   _PlayerAudios: {fileID: 11400000, guid: d5915601882dee54e9e1c6070a2bba65, type: 2}
+--- !u!114 &1682903888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682903884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b235d280a30c64885a3753a59f046c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UISFXManager
 --- !u!1 &1754113772
 GameObject:
   m_ObjectHideFlags: 0

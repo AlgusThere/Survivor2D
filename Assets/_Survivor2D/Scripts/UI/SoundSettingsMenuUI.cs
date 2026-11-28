@@ -8,10 +8,10 @@ public class SoundSettingsMenuUI : MonoBehaviour
 
     public void UpdateMusicValueText(float value)
     {
-        _MusicValueText.text = Mathf.RoundToInt(value).ToString();
+        _MusicValueText.text = Mathf.RoundToInt(value * 100f).ToString();
     }
     public void UpdateSFXValueText(float value)
     {
-        _SFXValueText.text = Mathf.RoundToInt(value).ToString();
+        _SFXValueText.text = Mathf.RoundToInt(value * 100f).ToString();
     }
 }
